@@ -1,0 +1,256 @@
+@import './reset';
+@import './variables';
+@import './carousel';
+@import './gallery';
+@import './layout';
+@import './parallax';
+@import './typography';
+@import './responsiveness';
+
+* { box-sizing: border-box; }
+body {
+  background-color: $white;
+  color: $black;
+  font: 16px 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  line-height: 150%;
+  position: relative;
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  &:hover {
+    color: black;
+  }
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight: 300;
+}
+h2 {
+  font-size: 22px;
+}
+
+.lang-selector {
+  position: absolute;
+  right: 80px;
+  top: 10px;
+  z-index: 1;
+  font-size: 12px;
+  width: 40px;
+  display: flex;
+  justify-content: space-between;
+  a {
+    padding: 0 10px;
+  }
+}
+
+a.label--lang {
+  color: $font-greyed;
+  &:hover {
+    color: $black;
+  }
+  span {
+    height: 20px;
+  }
+}
+
+// EXTENSIONS
+.container {
+  margin: 0 auto;
+  position: relative;
+}
+
+.blackground-text {
+  background-color: $blue-dark;
+  color: $white;
+  font-size: 24px;
+  padding: 35px 0;
+  @media screen and (max-width: 768px) {
+      font-size: calc(12px + 1vw);
+  }
+}
+.middler {
+  width: 85%;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+footer {
+  min-height: 100px;
+  div {
+    width: 85%;
+    margin: auto;
+  }
+  h4 {
+    font-size: 20px;
+    @media (max-width: $breakpoint-tablet) { 
+      font-size: 18px;
+    }
+  }
+  p {
+    line-height: 150%;
+    font-size: 20px;
+    font-weight: 100;
+    @media (max-width: $breakpoint-tablet) { 
+      line-height: 165%;
+      font-size: 16px;
+    }
+  }
+  .social_img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: $breakpoint-tablet) { 
+    flex-direction: column;
+  }
+}
+.col-md-6 {
+  width: 50%;
+  align-self: center;
+  @media (max-width: $breakpoint-tablet) { 
+    width: 100%; 
+  }
+}
+
+.block {
+  display: block;
+}
+// HOME
+.logo {
+  height: 150px;
+  display: block;
+  filter: brightness(0) invert(1);
+  margin-top: 25px;
+}
+
+.flickity-prev-next-button {
+  background-color: #212121 !important;
+  svg {
+    filter: brightness(0) invert(1) !important;
+  }
+}
+.footer-holder {
+  display: none;
+  @media (max-width: $breakpoint-desktop) { 
+    display: block;
+  }
+}
+
+// AQUAREL
+.aquarel {
+  margin-top: 100px;
+  @media (max-width: $breakpoint-mobile) { 
+    margin-top:35px;
+  }
+}
+
+// ABOUT
+.about_text {
+  margin: 25px;
+  @media (max-width: $breakpoint-tablet) { 
+    margin: 0px;
+  }
+  @media (max-width: $breakpoint-mobile) { 
+    margin-top:5px;
+  }
+  @media (max-width: $breakpoint-mobile) { 
+    margin-top:5px;
+  }
+}
+.fullwidth-img {
+  width: 100%;
+}
+.semiwidth-img {
+  width: 80% ;
+}
+.about-video {
+  width: 100%;
+}
+
+// CONTACT
+.contactt {
+  font-size: 28px;
+  @media (max-width: $breakpoint-tablet) { 
+    font-size: $textsize-normal;
+  }
+  @media (max-width: $breakpoint-tablet) { 
+    font-size: 15px;
+  }
+}
+.page-title {
+  margin: 35px 0;
+  font-size: 48px;
+  @media (max-width: $breakpoint-tablet) { 
+    font-size: 36px;
+  }
+  @media (max-width: $breakpoint-mobile) { 
+    font-size: 26px;
+  }
+}
+.contact-wrapper {
+  margin-top: 100px;
+}
+.contact_assignment {
+  font-size: $textsize-normal;
+  @media (max-width: $breakpoint-tablet) { 
+    font-size: $textsize-small;
+  }
+  @media (max-width: $breakpoint-mobile) { 
+    font-size: 15px;
+  }
+  line-height: 150%;
+  margin-bottom: 55px;
+}
+.contacttype {
+  color: $font-greyed;
+  margin-bottom: 5px;
+}
+.contact_img {
+  width: 64px !important;
+  height: 62px !important;
+}
+.contact_link {
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.url {
+  text-decoration: underline;
+  display: inline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+.about-vid {
+  height: 40vh;
+  padding-right: 30px;
+  width: 100%;
+  @media (max-width: $breakpoint-mobile) { 
+    padding-right: 0px;
+  }
+}
+
+
+// UTILITIES
+.text_center {
+  text-align: center;
+}
+.bold {
+  font-weight: 400;
+}
+
+.photo-about {
+  width: 480px;
+  @media (max-width: $breakpoint-tablet) { 
+    width: 320px;
+  }
+}

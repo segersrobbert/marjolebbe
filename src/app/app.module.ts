@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ScullyLibModule } from '@scullyio/ng-lib';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    GalleryComponent
+    GalleryComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,

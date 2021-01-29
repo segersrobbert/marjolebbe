@@ -1,0 +1,24 @@
+@import './variables';
+
+.gallery {
+  columns: 3;
+  padding-top: 15px;
+  @media (max-width: $breakpoint-tablet) { columns: 2; }
+  // @media (max-width: $breakpoint-mobile) { columns: 1; }
+  &-image {
+      max-width: 400px;
+      width: 100%;
+  }
+}
+.gallery {
+  a.selector {
+    margin-bottom: 10px;
+    display: block;
+  }
+}
+#lg-download {
+  display: none;
+}
+.lg-outer .lg-thumb-outer {
+  background-color: transparent !important;
+}

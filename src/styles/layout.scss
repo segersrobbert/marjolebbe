@@ -1,0 +1,226 @@
+@import './variables';
+@import './responsiveness';
+
+.margin-right-l--nomobile {
+  margin-right: 50px;
+  @media (max-width: $breakpoint-tablet) { 
+    margin-right: 0;
+  }
+}
+.max-vw50 {
+  max-width: 50vw;
+  &--desc {
+    max-width: 50vw;
+    @media (max-width: $breakpoint-tablet) { 
+      max-width: 75vw;
+    }
+    @media (max-width: $breakpoint-mobile) { 
+      max-width: 100vw;
+    }
+  }
+}
+.flex {
+  display: flex;
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-end {
+  justify-content: flex-end;
+  &--nomobile {
+    @media (max-width: $breakpoint-desktop) { 
+      justify-content: flex-start;
+    }
+  }
+}
+.marginauto {
+  margin-left: auto;
+  margin-right: auto;
+}
+.desktop-justify-between {
+  justify-content: space-between;
+}
+.width60 { width: 60%; }
+.width40 { width: 40%; }
+.imgSizing {
+  position: relative;
+  float: left;
+  width:  40vw;
+  height: 40vw;
+  background-position: 50% 50%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+}
+.imgSizing--horizontal {
+  position: relative;
+  float: left;
+  width:  40vw;
+  height: 25vw;
+  background-position: 50% 25%;
+  background-repeat:   no-repeat;
+  background-size:     cover;
+}
+
+.fullwidthTablet {
+  @media (max-width: $breakpoint-tablet) { 
+    width: 100%;
+  }
+}
+
+.margin-top-s {
+  margin-top: 10px;
+}
+.margin-top-m {
+  margin-top: 25px;
+}
+.margin-top-l {
+  margin-top: 50px;
+  &--nodesktop {
+    @media (min-width: $breakpoint-tablet) { 
+      margin-top: 0;
+    }
+  }
+  &--nomobile {
+    @media (min-width: $breakpoint-mobile) { 
+      margin-top: 0;
+    }
+  }
+  &--onlymobile {
+    @media (max-width: $breakpoint-mobile) { 
+      margin-top: 50px;
+    }
+  }
+  &--tabletDown {
+    @media (max-width: $breakpoint-tablet) { 
+      margin-top: 50px;
+    }
+  }
+}
+.margin-top-xl {
+  margin-top: 100px;
+  &--nomobile {
+    margin-top: 100px !important;
+    @media (max-width: $breakpoint-mobile) { 
+      margin-top: 50px;
+    }
+  }
+}
+.margin-top-xxl {
+  margin-top: 150px;
+}
+.margin-top-50 {
+  margin-top: 50%;
+}
+.margin-right-l {
+  margin-right: 50px;
+  &--nomobile {
+    @media (max-width: $breakpoint-desktop) { 
+      margin-right: 0;
+    }
+  }
+}
+
+//
+
+
+.flex { display: flex; }
+.column { flex-direction: column; }
+.justify-between { justify-content: space-between; }
+.justify-evenly { justify-content: space-evenly; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.items-left { align-items: left; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.self-end { align-self: flex-end; }
+.self-center { align-self: flex-center; }
+.flex-wrap {flex-wrap: wrap;}
+.flex1 { flex: 1; }
+.flex2 { flex: 2; }
+.flex3 { flex: 3; }
+.flex4 { flex: 4; }
+.flex5 { flex: 5; }
+.flex6 { flex: 6; }
+
+
+.nomargin { margin: 0; }
+.marginauto { margin: auto; }
+.relative { position: relative; }
+.noPadding, .noPadding > * { padding: 0 !important; }
+
+.inline { display: inline; }
+.block { display: block; }
+
+
+// UTILITIES
+.height-full { height: 100%; }
+.width-full { width: 100%; }
+.width-half { width: 50%; }
+
+
+
+$sizes: s m l xl xxl;
+
+// MARGINS
+$directions: top right bottom left;
+@each $size in $sizes {
+
+  .margin-#{$size} {
+    @if ($size == 's') { margin: $spacing-s; }
+    @if ($size == 'm') { margin: $spacing-m; }
+    @if ($size == 'l') {
+      margin: $spacing-m;
+      @include screen-m { margin: $spacing-l; }
+    }
+    @if ($size == 'xl')  {
+      margin: $spacing-l;
+      @include screen-m { margin: $spacing-xl; }
+    }
+  }
+
+  @each $direction in $directions {
+    .margin-#{$direction}-#{$size} {
+      @if ($size == 's')  { margin-#{$direction}: $spacing-s; }
+      @if ($size == 'm')  { margin-#{$direction}: $spacing-m; }
+      @if ($size == 'l')  {
+        margin-#{$direction}: $spacing-m;
+        @include screen-m { margin-#{$direction}: $spacing-l; }
+      }
+      @if ($size == 'xl')  {
+        margin-#{$direction}: $spacing-l;
+        @include screen-m { margin-#{$direction}: $spacing-xl; }
+      }
+      @if ($size == 'xxl')  {
+        margin-#{$direction}: $spacing-xl;
+        @include screen-m { margin-#{$direction}: $spacing-xxl; }
+      }
+    }
+  }
+
+}
+
+.margin-top-auto { margin-top: auto; }
+
+// PADDINGS
+$directions: top right bottom left;
+@each $size in $sizes {
+
+  .padding-#{$size} {
+    @if ($size == 's') { padding: $spacing-s; }
+    @if ($size == 'm') { padding: $spacing-m; }
+    @if ($size == 'l') { padding: $spacing-l; }
+  }
+
+  @each $direction in $directions {
+    .padding-#{$direction}-#{$size} {
+      @if ($size == 's') { padding-#{$direction}: $spacing-s; }
+      @if ($size == 'm') { padding-#{$direction}: $spacing-m; }
+      @if ($size == 'l') { padding-#{$direction}: $spacing-l; }
+      @if ($size == 'xl')  {
+        padding-#{$direction}: $spacing-l;
+        @include screen-m { padding-#{$direction}: $spacing-xl; }
+      }
+    }
+  }
+
+}

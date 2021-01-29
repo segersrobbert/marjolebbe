@@ -1,0 +1,66 @@
+$screen-xs: 480px;
+$screen-s: 640px;
+$screen-m: 768px;
+$screen-l: 1024px;
+$screen-xl: 1200px;
+
+// media query mixins
+@mixin screen-xs {
+  @media (min-width: #{$screen-xs}) { @content; }
+}
+@mixin screen-s {
+  @media (min-width: #{$screen-s}) { @content; }
+}
+@mixin screen-m {
+  @media (min-width: #{$screen-m}) { @content; }
+}
+@mixin screen-l {
+  @media (min-width: #{$screen-l}) { @content; }
+}
+@mixin screen-xl {
+  @media (min-width: #{$screen-xl}) { @content; }
+}
+
+.nomobile {
+  @media (max-width: $breakpoint-desktop) { 
+    display: none;
+  }
+}
+.onlymobile {
+  @media (min-width: $breakpoint-mobile+1) { 
+    display: none !important;
+  }
+}
+.onlyGTmobile {
+  @media (max-width: $breakpoint-mobile) { 
+    display: none !important;
+  }
+}
+
+.notablet {
+  @media (max-width: $breakpoint-tablet) { 
+    display: none;
+  }
+}
+.onlytablet {
+  @media (min-width: $breakpoint-tablet+1) { 
+    display: none !important;
+  }
+}
+.onlyGTtablet {
+  @media (max-width: $breakpoint-tablet) { 
+    display: none !important;
+  }
+}
+
+.nodesktop {
+  @media (max-width: $breakpoint-mobile) { 
+    display: none;
+  }
+}
+
+.column--mobile {
+  @media (max-width: $breakpoint-mobile+1) { 
+    flex-direction: column !important;
+  }
+}

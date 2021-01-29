@@ -1,0 +1,33 @@
+.timelapse {
+  width: 100%;
+  height: 60vh;
+}
+
+.jarallax {
+  position: relative;
+  z-index: 0;
+  height: 65vh;
+  @media screen and (max-width: $breakpoint-desktop) {
+    height: 55vh;
+  }
+}
+.jarallax > .jarallax-img,
+.jarallax--l > .jarallax-img {
+  position: absolute;
+  object-fit: cover;
+  /* support for plugin https://github.com/bfred-it/object-fit-images */
+  font-family: 'object-fit: cover;';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.jarallax--l {
+  @extend .jarallax;
+  height: 70vh;
+  @media screen and (max-width: $breakpoint-desktop) {
+    height: 60vh;
+  }
+}

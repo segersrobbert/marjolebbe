@@ -1,0 +1,72 @@
+
+
+h1, h2, h3, h4 { line-height: 150%; }
+h1 {
+  font-size: 2.8rem;
+  @include screen-m { font-size: 3rem; }
+  @include screen-l { font-size: 3.3rem; }
+}
+h2 {
+  font-size: 1.75rem;
+  @include screen-m { font-size: 2.5rem; }
+}
+h3 {
+  font-size: 1.5rem;
+  @include screen-m { font-size: 2rem; }
+}
+h4 {
+  font-size: 1.25rem;
+  @include screen-m { font-size: 1.5rem; }
+}
+h5 {
+  font-size: 1.15rem;
+  @include screen-m { font-size: 1.25rem; }
+}
+h6 {
+  font-size: 1.05rem;
+  @include screen-m { font-size: 1.1rem; }
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-small {
+  font-size: 16px;
+}
+
+.url {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.icon-large {
+  font-size: 84px;
+}
+
+.bold { font-weight: bold; }
+.italic { font-style: italic; }
+.font-lighter { font-weight: lighter; }
+.underline {
+  text-decoration: underline;
+  &:hover { text-decoration: none; }
+}
+.capitalize {
+  text-transform: capitalize;
+}
+
+.line-height-110 { line-height: 110%; }
+.line-height-150 { line-height: 150%; }
+
+// FONT SIZES
+@for $i from 1 through 48 {
+  @if ($i) % 2 == 0 {
+    .font-#{$i} { font-size: $i * 1px; }
+  }
+}

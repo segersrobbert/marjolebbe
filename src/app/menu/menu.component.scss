@@ -1,0 +1,120 @@
+@import 'src/styles/main';
+@import 'src/styles/variables';
+
+.menu {
+  margin-bottom: 15px;
+  &-header {
+      display: flex;
+      min-width: 160px;
+      @media (max-width: $breakpoint-desktop) { 
+        justify-content: center;
+      }
+      h1 {
+        font-size: 28px;
+        margin-top: 15px;
+        font-weight: 300;
+      }
+      h2 {
+          font-size: 18px;
+          margin-top: 10px;
+          font-weight: 100;
+          @media (max-width: $breakpoint-desktop) { 
+            text-align: center
+          }
+      }
+      &-wrapper {
+        display: flex;
+        width: 95%;
+        justify-content: space-between;
+        margin: auto;
+        @media (max-width: $breakpoint-desktop) { 
+          flex-direction: column;
+          width: 100%;
+        }
+      }
+  }
+  &-list {
+      display: flex;
+      min-height: 40px;
+      margin: auto;
+      @media screen and (max-width: $breakpoint-tablet) {
+        padding-left: 0;
+        width: 100%;
+      }
+      &-wrapper {
+        margin-top:35px;
+        @media screen and (max-width: $breakpoint-desktop) {
+          display: flex;
+          margin-top:20px;
+        }
+        @media (max-width: $breakpoint-tablet) { 
+          flex-direction: column
+        }
+      }
+  }
+  &-listitem {
+    list-style: none;
+    font-size: $textsize-normal;
+    width: 10%;
+    min-width: 125px;
+    line-height: 10px;
+    position: relative;
+    text-align: center;
+    line-height: 70%;
+    @media screen and (max-width: $breakpoint-desktop) {
+      min-width: 100px;
+      font-size: 15px;
+    }
+    @media screen and (max-width: $breakpoint-tablet) {
+      min-width: inherit;
+      flex: 1;
+    }
+    &:not(:last-child):after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 11px;
+      width: 1px;
+      height: 50%;
+      background-color: $blue-dark;
+    }
+    a {
+        letter-spacing: 3px;
+        justify-content: center;
+    }
+  }
+  &-artist {
+      @extend .middler;
+      @extend .blackground-text;
+      display: flex;
+      &-logo {
+          margin-right: 35px;
+      }
+      &-text {
+          font-size: $textsize-normal;
+          @media screen and (max-width: $breakpoint-tablet) {
+              font-size: calc(12px + 1vw);
+          }
+      }
+      &-container {
+          background-color: $black-background;
+      }
+  }
+}
+
+.menu-static {
+  @extend .menu;
+  justify-content: center;
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  padding: 10px 0;
+  width: 100%;
+  z-index: 10;
+  .menu-list {
+    justify-content: center;
+  }
+  &-header {
+    padding-left: 0;
+  }
+}
