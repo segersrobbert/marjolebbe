@@ -25,6 +25,8 @@
     "@scullyio/init": "^1.0.1",
     "@scullyio/ng-lib": "^1.0.0",
     "@scullyio/scully": "^1.0.0",
+    "flickity": "^2.2.2",
+    "jarallax": "^1.12.5",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
